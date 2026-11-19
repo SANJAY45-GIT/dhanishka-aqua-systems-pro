@@ -1,0 +1,152 @@
+/* Dhanishka Aqua Systems - shared polish layer (loaded after Tailwind) */
+
+:root {
+  --aqua-primary: #001629;
+  --aqua-primary-container: #002b49;
+  --aqua-secondary: #006a6a;
+  --aqua-secondary-soft: #6ef3f3;
+  --aqua-surface: #f7f9fb;
+  --aqua-outline: #c3c7ce;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img { max-width: 100%; }
+
+/* Keyboard users get a clear focus ring everywhere */
+:focus-visible {
+  outline: 3px solid var(--aqua-secondary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip link */
+.skip-link {
+  position: fixed; left: 16px; top: -64px; z-index: 100;
+  background: var(--aqua-primary); color: #fff; padding: 10px 16px;
+  border-radius: 8px; font: 600 14px/20px Inter, sans-serif; transition: top .2s;
+}
+.skip-link:focus { top: 12px; }
+
+/* Anchored sections shouldn't hide under the fixed header */
+[id] { scroll-margin-top: 96px; }
+
+/* Scroll-reveal (only active when JS runs, so no-JS visitors see everything) */
+.js-reveal .reveal:not(.is-visible) { opacity: 0; transform: translateY(18px); }
+.reveal { transition: opacity .6s ease, transform .6s ease; }
+
+/* Mobile menu panel */
+@media (max-width: 1023px) {
+  .nav-open { gap: 1rem; align-items: flex-start !important; max-height: calc(100vh - 72px); overflow-y: auto; }
+  .nav-open a { width: 100%; padding: 6px 0; }
+}
+
+/* ---------- Toast ---------- */
+#aqua-toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 24px);
+  background: var(--aqua-primary); color: #fff; padding: 12px 20px; border-radius: 12px;
+  font: 500 14px/20px Inter, sans-serif; box-shadow: 0 10px 30px rgba(0,22,41,.3);
+  opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; z-index: 90; max-width: 90vw;
+}
+#aqua-toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* ---------- Floating action buttons ---------- */
+#aqua-fab {
+  position: fixed; right: 20px; bottom: 20px; z-index: 70;
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+}
+.aqua-fab-btn {
+  width: 56px; height: 56px; border-radius: 9999px; border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; color: #fff;
+  box-shadow: 0 8px 24px rgba(0,22,41,.28); transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+}
+.aqua-fab-btn:hover { transform: translateY(-3px) scale(1.04); box-shadow: 0 12px 28px rgba(0,22,41,.35); }
+.aqua-fab-wa { background: #25d366; }
+.aqua-fab-chat { background: linear-gradient(135deg, var(--aqua-primary), var(--aqua-secondary)); position: relative; }
+.aqua-fab-chat .aqua-ping {
+  position: absolute; top: 2px; right: 2px; width: 12px; height: 12px; border-radius: 50%;
+  background: var(--aqua-secondary-soft); border: 2px solid #fff;
+}
+.aqua-fab-btn svg { width: 26px; height: 26px; fill: currentColor; }
+
+/* ---------- Chat panel ---------- */
+#aqua-chat {
+  position: fixed; right: 20px; bottom: 96px; z-index: 80;
+  width: min(380px, calc(100vw - 32px)); height: min(560px, calc(100vh - 130px));
+  background: #fff; border-radius: 20px; overflow: hidden; display: none; flex-direction: column;
+  box-shadow: 0 24px 60px rgba(0,22,41,.35); border: 1px solid rgba(0,43,73,.08);
+  font-family: Inter, system-ui, sans-serif;
+}
+#aqua-chat.open { display: flex; animation: aquaPop .22s ease-out; }
+@keyframes aquaPop { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+
+.aqua-chat-head {
+  background: linear-gradient(135deg, var(--aqua-primary) 0%, var(--aqua-primary-container) 100%);
+  color: #fff; padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+}
+.aqua-chat-avatar {
+  width: 40px; height: 40px; border-radius: 50%; background: rgba(110,243,243,.18);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.aqua-chat-avatar svg { width: 22px; height: 22px; fill: var(--aqua-secondary-soft); }
+.aqua-chat-title { font: 700 15px/20px Montserrat, Inter, sans-serif; }
+.aqua-chat-sub { font-size: 12px; opacity: .8; display: flex; align-items: center; gap: 6px; }
+.aqua-chat-sub::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #4ade80; }
+.aqua-chat-close {
+  margin-left: auto; background: transparent; border: 0; color: #fff; cursor: pointer;
+  width: 32px; height: 32px; border-radius: 8px; font-size: 22px; line-height: 1;
+}
+.aqua-chat-close:hover { background: rgba(255,255,255,.12); }
+
+.aqua-chat-body { flex: 1; overflow-y: auto; padding: 16px; background: var(--aqua-surface); display: flex; flex-direction: column; gap: 10px; }
+.aqua-msg { max-width: 86%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 21px; white-space: pre-wrap; word-wrap: break-word; }
+.aqua-msg.bot { background: #fff; color: #191c1e; border: 1px solid #e0e3e5; border-bottom-left-radius: 4px; align-self: flex-start; }
+.aqua-msg.user { background: var(--aqua-secondary); color: #fff; border-bottom-right-radius: 4px; align-self: flex-end; }
+.aqua-msg.err { background: #ffdad6; color: #93000a; border: 0; }
+
+.aqua-typing { display: inline-flex; gap: 4px; padding: 14px 16px; }
+.aqua-typing span { width: 7px; height: 7px; border-radius: 50%; background: #73777e; animation: aquaBounce 1.2s infinite ease-in-out; }
+.aqua-typing span:nth-child(2) { animation-delay: .15s; }
+.aqua-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes aquaBounce { 0%, 60%, 100% { transform: translateY(0); opacity: .5; } 30% { transform: translateY(-5px); opacity: 1; } }
+
+.aqua-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+.aqua-chip {
+  background: #fff; color: var(--aqua-secondary); border: 1px solid var(--aqua-secondary);
+  border-radius: 9999px; padding: 6px 12px; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: all .15s;
+}
+.aqua-chip:hover { background: var(--aqua-secondary); color: #fff; }
+
+.aqua-chat-form { display: flex; gap: 8px; padding: 12px; background: #fff; border-top: 1px solid #e0e3e5; }
+.aqua-chat-form input {
+  flex: 1; border: 1px solid var(--aqua-outline); border-radius: 12px; padding: 10px 14px;
+  font-size: 14px; outline: none; min-width: 0;
+}
+.aqua-chat-form input:focus { border-color: var(--aqua-secondary); box-shadow: 0 0 0 3px rgba(0,106,106,.15); }
+.aqua-chat-form button {
+  background: var(--aqua-secondary); color: #fff; border: 0; border-radius: 12px; padding: 0 16px;
+  font-weight: 600; font-size: 14px; cursor: pointer; transition: background .15s;
+}
+.aqua-chat-form button:hover:not(:disabled) { background: var(--aqua-primary-container); }
+.aqua-chat-form button:disabled { opacity: .5; cursor: not-allowed; }
+.aqua-chat-foot { font-size: 11px; color: #73777e; text-align: center; padding: 0 12px 10px; background: #fff; }
+
+/* ---------- Contact success panel ---------- */
+.form-success {
+  text-align: center; padding: 32px 16px;
+}
+.form-success .tick {
+  width: 64px; height: 64px; border-radius: 50%; background: #6ef3f3; color: #006a6a;
+  display: inline-flex; align-items: center; justify-content: center; margin-bottom: 16px;
+}
+
+@media (max-width: 480px) {
+  #aqua-chat { right: 8px; left: 8px; width: auto; bottom: 88px; }
+  #aqua-fab { right: 12px; bottom: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  .js-reveal .reveal:not(.is-visible) { opacity: 1; transform: none; }
+}

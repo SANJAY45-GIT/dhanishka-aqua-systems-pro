@@ -1,0 +1,75 @@
+[
+  {
+    "id": "seed-p1",
+    "name": "AquaSpark 12L",
+    "category": "domestic-ro",
+    "badge": "Best Seller",
+    "description": "Advanced 7-stage purification with mineral retention technology for pure, healthy drinking water.",
+    "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuCpgJ8Sqv09DDAQMt5ppEJNszZ7wiTZGYk5ufvF1xhOig-4wv-HPGtjy5tXCDrLDtl6ick7GFbss71DQRnGu4rP58Kw5ICU_4baFHheMOVeTE6z8FvEF3hDsKJrQv5TNt90I_sdw11LI0PbvKYV7zvBQ41gMFF9gBxGBDaA9gTTc9MdKZM_xnjzqMEZntvZ-TaJkj6VDoIlf-CsKi4Htrz8mmOpOghNKIvlEfrWc8uZELOArlH6j_jtug",
+    "specs": [
+      {
+        "icon": "water_drop",
+        "label": "Stages",
+        "value": "7-Stage RO+UV"
+      },
+      {
+        "icon": "speed",
+        "label": "Capacity",
+        "value": "15 L/hr"
+      },
+      {
+        "icon": "verified",
+        "label": "Warranty",
+        "value": "1 Year"
+      },
+      {
+        "icon": "storage",
+        "label": "Tank",
+        "value": "12 Liters"
+      }
+    ],
+    "submittedAt": "2026-01-05T00:00:00.000Z"
+  },
+  {
+    "id": "seed-p2",
+    "name": "AquaStealth Under-Sink",
+    "category": "domestic-ro",
+    "badge": "",
+    "description": "Space-saving under-the-counter design with zero-wastage technology and high flow rate.",
+    "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuB1l7s9HKg1qdZwmgAXTJT45-1o-73ZNUkIKnLFXzP8YN1fxmT3tpPY29unVYFkM4hE5aLQmiKTv-6Uu553dwh5M86FoCTjkU0R8S2m5j-kOOxS65xUjUcRX1wQ0r1g9ZcSLBZnNtJ_eBx5Kbbo_BH3Ht95KQn9vFnUpULKCFv_oxN3zXRQonsk5ImAKhA_426P_3XUZjct5iasenGsYhO0sm01Tyg0WETa9rwC5DFRntU2IXAu5cSBMw",
+    "specs": [
+      {
+        "icon": "water_drop",
+        "label": "Stages",
+        "value": "5-Stage RO"
+      },
+      {
+        "icon": "speed",
+        "label": "Capacity",
+        "value": "20 L/hr"
+      }
+    ],
+    "submittedAt": "2026-01-12T00:00:00.000Z"
+  },
+  {
+    "id": "seed-p3",
+    "name": "AquaSmart Pro",
+    "category": "domestic-ro",
+    "badge": "",
+    "description": "IoT-enabled smart purifier with real-time TDS monitoring and filter replacement alerts.",
+    "imageUrl": "https://lh3.googleusercontent.com/aida-public/AB6AXuAviV7xzKml3LTfS2DaaYXEWMx4G5DvifopUA1sPj8GYOuLzcf385hQn7qs4HdfWyBBAKTH-7lqOR5tAdZdeRU8e9g873_bTF89ca5mLlka1uLOz4q813twdDnZUX2HJ5tYqGXcg6B6nELOv4xoVYmw6wRHOle0tzJrod3wlnMeEHYaSEpCOotNIIdKjACGrkgmtpJ443Mg2r-ElReylUAOJCZ-du-VrnPGLs42IRqmTUYkMZNjpC5Pww",
+    "specs": [
+      {
+        "icon": "water_drop",
+        "label": "Stages",
+        "value": "8-Stage RO+UV+UF"
+      },
+      {
+        "icon": "wifi",
+        "label": "Smart",
+        "value": "App Connected"
+      }
+    ],
+    "submittedAt": "2026-01-18T00:00:00.000Z"
+  }
+]
